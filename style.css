@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#gameboard {
+    width: 387px;
+    height: 387px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px black
+}
+
+.cell {
+    width: 125px;
+    height: 125px;
+    background-color: white;
+    border: solid 2px black ;
+    margin: 0px; 
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+    background-color: "blue";
+}
+.O {
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    vertical-align:center;
+    /* height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 10px solid blue;
+    box-sizing: border-box; */
+}
+.X {
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    vertical-align:center;    
+}
