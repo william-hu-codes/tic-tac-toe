@@ -53,12 +53,21 @@ body {
     font-family: Arial, Helvetica, sans-serif;    
 }
 .score {
-    display: inline-block
+    display: inline-block;
+}
+#o-score {
+    display: inline-block;
+    margin-right: 40px;
+    padding-bottom: 15px;
+}
+#tie-score {
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 15px;
 }
 #x-score {
     display: inline-block;
-    margin-left: 40px
-}
-#o-score {
-    display: inline-block
+    margin-left: 40px;
+    padding-bottom: 15px;
 }

@@ -10,7 +10,8 @@ const startingCells = ["", "", "", "", "", "", "", "", ""]
 let currentBoard;
 let score = {
     O: 0,
-    X: 0
+    X: 0,
+    tie:0
 }
 let winner;
 let turn;
@@ -55,8 +56,10 @@ function init() {
 function renderScore() {
     let oScoreEl = document.querySelector("#o-score");
     let xScoreEl = document.querySelector("#x-score");
+    let tieScoreEl = document.querySelector("#tie-score");
     oScoreEl.innerText = `O Score: ${score.O}`
     xScoreEl.innerText = `X Score: ${score.X}`
+    tieScoreEl.innerText = `Ties: ${score.tie}`
     
 }
 function render() {
@@ -69,20 +72,27 @@ function renderInfo () {
     } else infoEl.innerText = "Click restart to play again!"
 }
 function checkWinner() {
-    allOEls = document.querySelectorAll(".O");
+    // allOEls = document.querySelectorAll(".O");
     // let arrayOfOs = [...allOEls]
     // console.log(arrayOfOs)
-    allXEls = document.querySelectorAll(".X");
+    // allXEls = document.querySelectorAll(".X");
     checkDiagonal()
     checkRows()
+    checkTie()
     // checkColumns()
-    if (winner !== "") {
+    if (winner === "O" || winner === "X") {
         alert(`congratulations player ${winner}!`)
         score[winner] += 1
+    } else if (winner === "tie") {
+        score[winner] += 1
+        alert(`It's a tie! Play again!`)
     }
 
 }
-
+function checkTie() {
+    if (!currentBoard.includes("")){
+        winner = "tie"
+    }}
 function checkDiagonal() {
     let diag1 = (currentBoard[0] === currentBoard[4]) && (currentBoard[4] === currentBoard[8]);
     let diag2 = (currentBoard[2] === currentBoard[4]) && (currentBoard[4] === currentBoard[6]);
