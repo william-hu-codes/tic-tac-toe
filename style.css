@@ -52,3 +52,13 @@ body {
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;    
 }
+.score {
+    display: inline-block
+}
+#x-score {
+    display: inline-block;
+    margin-left: 40px
+}
+#o-score {
+    display: inline-block
+}
