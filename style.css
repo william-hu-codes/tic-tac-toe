@@ -6,25 +6,34 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    background-color: black;
+    color: white;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px green, 0 0 20px green, 0 0 25px green, 0 0 30px green, 0 0 35px green
+    /* 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa; */
 }
-
-#gameboard {
-    width: 387px;
-    height: 387px;
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    border: solid 1px black
+button {
+    background-color: lightgreen;
 }
-
+h1 {
+    font-family: 'Warnes', cursive;
+    font-size: 50px
+}
 .cell {
     width: 125px;
     height: 125px;
-    background-color: white;
-    border: solid 2px black ;
+    border: solid 2px white ;
     margin: 0px; 
     justify-content: center;
     align-items: center;
+    background-color: black;
+
 }
 .circle {
     background-color: "blue";
@@ -33,10 +42,12 @@ body {
     text-align: center;
     justify-content: center;
     font-size: 70px;
-    vertical-align:center;
     color: blue;
     font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;    
+    font-family: Arial, Helvetica, sans-serif;  
+    align-content: center;  
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+    font-family: 'Orbitron', sans-serif;
     /* height: 70px;
     width: 70px;
     border-radius: 50%;
@@ -47,14 +58,31 @@ body {
     text-align: center;
     justify-content: center;
     font-size: 70px;
-    vertical-align:center;  
+    align-content: center;  
     color: red;  
     font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;    
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px red, 0 0 20px red, 0 0 25px red, 0 0 30px red, 0 0 35px red;
+    font-family: 'Orbitron', sans-serif;
+
 }
 .score {
     display: inline-block;
     margin-left: 40px;
     margin-right: 40px;
     padding-bottom: 15px;
+    font-size: 18px;  
+    font-family: 'Orbitron', sans-serif;
+}
+#gameboard {
+    width: 387px;
+    height: 387px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px black
+}
+#info {
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
 }
