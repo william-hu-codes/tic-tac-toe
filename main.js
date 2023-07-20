@@ -86,10 +86,10 @@ function checkWinner() {
     // let arrayOfOs = [...allOEls]
     // console.log(arrayOfOs)
     // allXEls = document.querySelectorAll(".X");
+    checkTie()
     checkDiagonal()
     checkRows()
     checkColumns()
-    checkTie()
     // checkColumns()
     // if (winner === "O" || winner === "X") {
     //     alert(`congratulations player ${winner}!`)
