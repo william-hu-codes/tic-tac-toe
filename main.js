@@ -132,6 +132,7 @@ function checkRows() {
     if (currentBoard[6] + currentBoard[7] + currentBoard[8] === "OOO" || currentBoard[6] + currentBoard[7] + currentBoard[8] === "XXX") {
         winner = currentBoard[6];
     }
+    //for some reason, this approach didn't work
     // let row1 = (currentBoard[0] === currentBoard[1]) && (currentBoard[1] === currentBoard[2]);
     // let row2 = (currentBoard[3] === currentBoard[4]) && (currentBoard[4] === currentBoard[5]);
     // let row3 = (currentBoard[6] === currentBoard[7]) && (currentBoard[7] === currentBoard[8]);
