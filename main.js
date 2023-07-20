@@ -6,6 +6,7 @@ const startingCells = ["", "", "", "", "", "", "", "", ""]
 // const rowWinningCombos
 // ]
 // const currentBoard = ["", "", "", "", "", "", "", "", ""]
+
 /*----- state variables -----*/
 let currentBoard;
 let score = {
@@ -53,6 +54,12 @@ function init() {
     })
     render();
 }
+function render() {
+    renderInfo();
+    renderScore();
+    renderWinner()
+}
+
 function renderScore() {
     let oScoreEl = document.querySelector("#o-score");
     let xScoreEl = document.querySelector("#x-score");
@@ -62,11 +69,7 @@ function renderScore() {
     tieScoreEl.innerText = `Ties: ${score.tie}`;
     
 }
-function render() {
-    renderInfo();
-    renderScore();
-    renderWinner()
-}
+
 function renderWinner() {
     if (winner === "O" || winner === "X") {
         alert(`congratulations player ${winner}!`)
@@ -76,11 +79,13 @@ function renderWinner() {
         alert(`It's a tie! Play again!`)
     }
 }
+
 function renderInfo () {
     if (winner === "") {
         infoEl.innerHTML = `It is now ${turn}'s turn`
     } else infoEl.innerText = "Click restart to play again!"
 }
+
 function checkWinner() {
     // allOEls = document.querySelectorAll(".O");
     // let arrayOfOs = [...allOEls]
@@ -100,6 +105,12 @@ function checkWinner() {
     // }
 
 }
+function checkTie() {
+    if (!currentBoard.includes("")){
+        winner = "tie"
+    }
+}
+    
 function checkColumns() {
     if (currentBoard[0] + currentBoard[3] + currentBoard[6] === "OOO" || currentBoard[0] + currentBoard[3] + currentBoard[6] === "XXX") {
         winner = currentBoard[0];
@@ -111,17 +122,20 @@ function checkColumns() {
         winner = currentBoard[2];
     }
 }
-function checkTie() {
-    if (!currentBoard.includes("")){
-        winner = "tie"
-    }}
+
 function checkDiagonal() {
-    let diag1 = (currentBoard[0] === currentBoard[4]) && (currentBoard[4] === currentBoard[8]);
-    let diag2 = (currentBoard[2] === currentBoard[4]) && (currentBoard[4] === currentBoard[6]);
-    if (diag1 || diag2) {  
-        winner = currentBoard[4]
+    if (currentBoard[0] + currentBoard[4] + currentBoard[8] === "OOO" || currentBoard[0] + currentBoard[4] + currentBoard[8] === "XXX") {
+        winner = currentBoard[0];
     }
+    if (currentBoard[2] + currentBoard[4] + currentBoard[6] === "OOO" || currentBoard[2] + currentBoard[4] + currentBoard[6] === "XXX") {
+        winner = currentBoard[2];
+    }
+    // let diag1 = (currentBoard[0] === currentBoard[4]) && (currentBoard[4] === currentBoard[8]);
+    // let diag2 = (currentBoard[2] === currentBoard[4]) && (currentBoard[4] === currentBoard[6]);
+    // if (diag1 || diag2) {  
+    //     winner = currentBoard[4]
 }
+
 function checkRows() {
     if (currentBoard[0] + currentBoard[1] + currentBoard[2] === "OOO" || currentBoard[0] + currentBoard[1] + currentBoard[2] === "XXX") {
         winner = currentBoard[0];
@@ -161,5 +175,5 @@ function clearGameBoard () {
             //     string = "";
             // })
 }
-    
+
 init();
