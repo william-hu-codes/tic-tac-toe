@@ -78,7 +78,7 @@ function renderWinner() {
 }
 function renderInfo () {
     if (winner === "") {
-        infoEl.innerText = `It is now ${turn}'s turn`
+        infoEl.innerHTML = `It is now ${turn}'s turn`
     } else infoEl.innerText = "Click restart to play again!"
 }
 function checkWinner() {
