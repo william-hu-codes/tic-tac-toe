@@ -44,7 +44,7 @@ buttonEl.addEventListener("click", reset);
 function init() {
     turn = "O";
     winner = "";
-    currentBoard = ["", "", "", "", "", "", "", "", ""]
+    currentBoard = [...startingCells]
     startingCells.forEach(function(cell, index) {
         let cellEl = document.createElement("div");
         cellEl.classList.add("cell");
