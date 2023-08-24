@@ -74,6 +74,9 @@ function renderWinner() {
     if (winner === "O" || winner === "X") {
         alert(`congratulations player ${winner}!`)
         score[winner] += 1
+        allCellEls.forEach(function(cellEl) {
+            cellEl.removeEventListener("click", select)
+        })
     } else if (winner === "tie") {
         score[winner] += 1
         alert(`It's a tie! Play again!`)
