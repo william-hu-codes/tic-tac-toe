@@ -105,11 +105,14 @@ h1 {
     font-family: 'Orbitron', sans-serif;
 }
 #gameboard {
-    width: 387px;
-    height: 387px;
+    width: 375px;
+    height: 375px;
     background-color: white;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* flex-wrap: wrap; */
     border: solid 1px black
 }
 #info {
