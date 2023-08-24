@@ -22,7 +22,7 @@ let turn;
 /*----- cached elements  -----*/
 const gameBoardEl = document.querySelector("#gameboard");
 const infoEl = document.querySelector("#info");
-const allCellEls = document.querySelectorAll(".cell");
+let allCellEls = document.querySelectorAll(".cell");
 const buttonEl = document.querySelector("button");
 
 /*----- event listeners -----*/
@@ -48,6 +48,7 @@ function init() {
     startingCells.forEach(function(cell, index) {
         let cellEl = document.createElement("div");
         cellEl.classList.add("cell");
+        allCellEls = document.querySelectorAll(".cell");
         cellEl.setAttribute("id", index);
         cellEl.addEventListener("click", select);
         gameBoardEl.append(cellEl);
@@ -73,10 +74,10 @@ function renderScore() {
 function renderWinner() {
     if (winner === "O" || winner === "X") {
         alert(`congratulations player ${winner}!`)
-        score[winner] += 1
         allCellEls.forEach(function(cellEl) {
             cellEl.removeEventListener("click", select)
         })
+        score[winner] += 1
     } else if (winner === "tie") {
         score[winner] += 1
         alert(`It's a tie! Play again!`)
